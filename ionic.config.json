@@ -1,0 +1,7 @@
+{
+  "name": "espLaVega",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
