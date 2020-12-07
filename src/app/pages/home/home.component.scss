@@ -1,0 +1,43 @@
+  #ion-content-principal:before {
+    content:'';
+    position: absolute;
+          top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0,0,0,0.6);
+  }
+  
+  .tab{
+    background-color: rgb(60, 137, 252);
+  }
+
+/* Without setting height the slides will take up the height of the slide's content */
+ion-slides {
+    margin-top: 30px;
+    width: 300px;
+    height: max-content;
+  }
+
+  .card{
+      background-color: transparent;
+      box-shadow: none;
+  }
+
+  .card h2{
+      font-weight: bold;
+      text-align: center;
+      color: white;
+  }
+
+  .card p{
+      text-align: justify;
+      color: white;
+      margin: 25px;
+  }
+
+  .card h3{
+    color: white;
+    margin: 20px;
+    margin-top: 25px;
+  }

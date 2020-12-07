@@ -1,3 +1,69 @@
-<p>
-  home works!
-</p>
+<ion-header #header>
+    <div align="center">
+        <img src="/assets/header1.png" width="259px" style="margin-top: 45px;">
+    </div>
+</ion-header>
+
+<ion-content [fullscreen]="true" [appHideHeader]="header" [scrollEvents]="true" id="ion-content-principal" class="content">
+
+  <ion-slides pager="true">
+    <ion-slide>
+      <img id="1" src="../../../assets/slide1.jpg">
+      <br>
+    </ion-slide>
+
+    <ion-slide>
+      <img src="../../../assets/slide2.jpg">
+      <br>
+    </ion-slide>
+
+    <ion-slide>
+      <img src="../../../assets/slide3.jpg">
+      <br>
+    </ion-slide>
+    <br>
+
+  </ion-slides>
+  <ion-card class="card">
+    <h2>Noticias</h2>
+    <h3>INFORMACION IMPORTANTE PARA LA COMUNIDAD</h3>
+    <p>Informamos a nuestros usuarios que el día viernes 25 de diciembre NO se realizará la ruta
+      de recolección de basura, el servicio se prestará el día sábado 26 de diciembre.
+    </p>
+  </ion-card>
+  <ion-card class="card">
+    <h3>NUEVAS TARIFAS SERVICIO PÚBLICO DE ASEO PARA EL MUNICIPIO DE LA VEGA – CUNDINAMARCA.</h3>
+    <p>Desde el año 2006, es decir hace más de diez (10) años el Municipio de La Vega Cundinamarca ha venido
+       aplicando para el servicio público de aseo las tarifas fijadas por la Junta Directiva de la Empresa de Acueducto,
+        Alcantarillado y Aseo de la Vega E.S.P., con fundamento en los lineamientos establecidos en la Resolución
+         CRA 351 Y 352 de 2006 expedidas por la Comisión de Regulación de Agua potable y Saneamiento Básico (CRA).
+    </p>
+  </ion-card>
+</ion-content>
+
+
+
+<ion-tabs >
+  <ion-tab-bar class="tab" slot="bottom">
+    <ion-tab-button class="tab" tab="info">
+      <ion-icon name="information-circle" style="color: white;"></ion-icon>
+      <ion-label style="color: white;">Informacion</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button class="tab" tab="home">
+      <ion-icon name="home" style="color: white;"></ion-icon>
+      <ion-label style="color: white;">Inicio</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button class="tab" tab="pay">
+      <ion-icon name="logo-usd" style="color: white;"></ion-icon>
+      <ion-label style="color: white;">Pagar</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button class="tab" tab="perfil">
+      <ion-icon style="color: white;" name="person-circle"></ion-icon>
+      <ion-label style="color: white;">Perfil</ion-label>
+    </ion-tab-button>
+
+  </ion-tab-bar>
+</ion-tabs>
