@@ -1,10 +1,16 @@
-<ion-header #header>
+<ion-header>
   <div align="center">
-      <img src="/assets/header1.png" width="259px" style="margin-top: 45px;">
+    <img src="/assets/header1.png" width="259px" style="margin-top: 18px; margin-bottom: 8px;">
   </div>
 </ion-header>
 
 <ion-content [fullscreen]="true" [scrollEvents]="true" id="ion-content-principal" class="content">
+
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button href="https://api.whatsapp.com/send?phone=573125470661">
+      <img src="http://s2.accesoperu.com/logos/btn_whatsapp.png">
+    </ion-fab-button>
+  </ion-fab>
 
   <ion-slides pager="true">
     <ion-slide>
@@ -23,6 +29,14 @@
     </ion-slide>
     <br>
 
+
+
+    <!--<div class="btn-whatsapp">
+      <a href="https://api.whatsapp.com/send?phone=573125470661" target="_blank">
+        <img src="http://s2.accesoperu.com/logos/btn_whatsapp.png" alt="">
+      </a>
+    </div>-->
+
   </ion-slides>
   <ion-card class="card">
     <h2>Noticias</h2>
@@ -34,10 +48,9 @@
   <ion-card class="card">
     <h3>NUEVAS TARIFAS SERVICIO PÚBLICO DE ASEO PARA EL MUNICIPIO DE LA VEGA – CUNDINAMARCA.</h3>
     <p>Desde el año 2006, es decir hace más de diez (10) años, el Municipio de La Vega Cundinamarca ha venido
-       aplicando para el servicio público de aseo las tarifas fijadas por la Junta Directiva de la Empresa de Acueducto,
-        Alcantarillado y Aseo de la Vega E.S.P., con fundamento en los lineamientos establecidos en la Resolución
-         CRA 351 Y 352 de 2006 expedidas por la Comisión de Regulación de Agua potable y Saneamiento Básico (CRA).
+      aplicando para el servicio público de aseo las tarifas fijadas por la Junta Directiva de la Empresa de Acueducto,
+      Alcantarillado y Aseo de la Vega E.S.P., con fundamento en los lineamientos establecidos en la Resolución
+      CRA 351 Y 352 de 2006 expedidas por la Comisión de Regulación de Agua potable y Saneamiento Básico (CRA).
     </p>
   </ion-card>
 </ion-content>
-

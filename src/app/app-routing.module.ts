@@ -7,6 +7,10 @@ const routes: Routes = [
   {
     path: '',
     loadChildren: () => import('../app/pages/tabs/tabs.module').then(m => m.TabsPageModule)
+  },
+  {
+    path: 'regiser',
+    loadChildren: () => import('./pages/regiser/regiser.module').then( m => m.RegiserPageModule)
   }
 ];
 

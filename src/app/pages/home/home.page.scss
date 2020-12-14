@@ -7,10 +7,29 @@
     right: 0;
     background-color: rgba(0,0,0,0.6);
   }
-  
+  .btn-whatsapp {
+    display:block;
+    width:70px;
+    height:70px;
+    color: #fff;
+    position: fixed;
+    right:20px;
+    bottom:20px;
+    border-radius:50%;
+    line-height:80px;
+    text-align:center;
+    z-index:999;
+}
   .tab{
     background-color: rgb(60, 137, 252);
   }
+
+ion-header {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    background-color: rgb(0, 49, 123) !important;
+}
 
 /* Without setting height the slides will take up the height of the slide's content */
 ion-slides {
