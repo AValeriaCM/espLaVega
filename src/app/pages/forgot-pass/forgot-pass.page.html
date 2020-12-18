@@ -1,0 +1,33 @@
+<ion-content id="ion-content-principal">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-img slot="end" style="position: initial; width: 80px;" src="../../../assets/logo2.png"></ion-img>
+    <ion-title style="text-align: center; margin-top: 15px; margin-bottom: 8px;" >¿Olvidó <br>su contraseña?</ion-title>
+  </ion-toolbar>
+
+  <form class="form-css">
+    <ion-item lines="full">
+      <ion-label position="floating">Correo electrónico</ion-label>
+      <ion-input type="email" required></ion-input>
+    </ion-item>
+
+    <ion-row>
+      <ion-col>
+        <ion-button type="submit" color="danger" expand="block">Enviar</ion-button>
+      </ion-col>
+    </ion-row>
+
+    <p>
+      Por favor, ingrese el correo electrónico con el que se registró. Enviaremos
+      un correo con las instrucciones para recuperar su cuenta.
+    </p>
+  </form>
+</ion-content>
+
+<ion-footer>
+  <div align="center">
+    <img src="/assets/header1.png" width="259px" style="margin-top: 18px; margin-bottom: 8px; background: var(--background);">
+  </div>
+</ion-footer>

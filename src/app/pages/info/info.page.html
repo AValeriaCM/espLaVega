@@ -1,12 +1,53 @@
 <ion-header id="">
   <ion-toolbar id="ion-toolbar-css">
     <ion-buttons slot="start">
-      <ion-back-button defaultHref="/"></ion-back-button>
+      <ion-back-button style="color: white !important;" defaultHref="/"></ion-back-button>
     </ion-buttons>
-    <ion-title>Volver</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content id="ion-content-principal">
+<ion-content [fullscreen]="true" [scrollEvents]="true" id="ion-content-principal">
 
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button href="https://api.whatsapp.com/send?phone=573202220697&text=Hola!%20Tengo%20una%20duda">
+      <img src="http://s2.accesoperu.com/logos/btn_whatsapp.png">
+    </ion-fab-button>
+  </ion-fab>
+
+  <ion-card class="card">
+    <img src="./assets/logo1.png">
+  </ion-card>
+  <ion-card class="card">
+    <h2 align="center"><strong>ENTIDAD</strong></h2>
+    <h3>MISION</h3>
+    <p>Somos una Empresa Industrial y Comercial del Municipio de La Vega, que promueve el desarrollo
+       sostenible en nuestro territorio, con servicios de agua potable, alcantarillado y aseo, 
+       enmarcados bajo principios de sustentabilidad ambiental.
+    </p>
+    <br>
+    <h3>VISION</h3>
+    <p>
+      Al finalizar el 2023, ESP LA VEGA, será reconocida por su liderazgo en servicios públicos de alta calidad,
+      su desarrollo y mejoramiento continuo, productiva, ambiental y financieramente viable.
+    </p>
+    <br>
+    <h3 align="center"><strong>ORNGANIGRAMA</strong></h3>
+    <img src="./assets/organigrama.jpg">
+  </ion-card>
+  <ion-card class="card">
+    <h3>Contáctenos</h3>
+    <ion-grid align="center">
+      <ion-row>
+        <ion-col>
+          <ion-icon name="logo-facebook" size="large" href="https://www.facebook.com/ESPLAVEGA/"></ion-icon>
+        </ion-col>
+        <ion-col>
+          <ion-icon name="logo-youtube" size="large" href="https://www.youtube.com/channel/UCAwX73KWI0J4qFivmpBkaGg"></ion-icon>
+        </ion-col>
+        <ion-col>
+          <ion-icon name="logo-instagram" size="large" href="https://instagram.com/esp_la_vega?igshid=13avyhpz321j2"></ion-icon>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-card>
 </ion-content>

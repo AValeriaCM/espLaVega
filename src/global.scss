@@ -47,6 +47,9 @@
     background-color: rgba(0,0,0,0.6);
   }
 
-  *{
-    font-family: Century Gothic;    
+  @font-face {
+    font-family: 'Caviar Dreams';
+    font-style: normal;
+    font-weight: normal;
+    src: url('./assets/fonts/caviar_dreams/CaviarDreams.ttf');
   }
