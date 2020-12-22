@@ -1,0 +1,20 @@
+<ion-content id="ion-content-principal">
+  <ion-grid>
+    <ion-row>
+      <ion-col align-self-center>
+
+        <ion-img style="width: 250px; margin-left: 12%;" src="../../../assets/logo2.png"></ion-img>
+        <br>
+        <h1 style="text-align: center;"><strong>¡Bienvenido!</strong></h1>
+        <br>
+        <ion-button [routerLink]="['/regiser']" expand="block" color="primary">Registrarme</ion-button>
+
+        <span class="divider line one-line">o</span>
+
+        <span class="already">¿Ya tienes una cuenta?</span>
+
+        <ion-button [routerLink]="['/login']" expand="block" color="danger" >Iniciar Sesion</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
