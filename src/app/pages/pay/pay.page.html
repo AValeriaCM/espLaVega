@@ -6,6 +6,25 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content id="ion-content-principal">
-
+<ion-content [fullscreen]="true" id="ion-content-principal">
+  <h3 style="margin: 25px;"><strong>Aquí puedes pagar tu factura</strong></h3>
+  <br>
+  <p>1. Ingresa el código de tu factura:</p> 
+  <br>
+  <input type="text" class="input" >    <ion-icon name="checkmark-circle" ></ion-icon>
+  <br>
+  <br>
+  <p>2. Elige tu medio de pago</p>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <img style="margin-left: 35px; margin-top: 15px; width: 100px; height: auto;" src="../../../assets/PSE.png" >
+      </ion-col>
+      <ion-col>
+        <img style="margin-left: 35px; margin-top: 15px; width: 100px; height: auto;" src="../../../assets/Bancolombia-.png" >
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <br>
+  <p>O encuentra el punto de pago más cercano ingresando tu dirección</p>
 </ion-content>
