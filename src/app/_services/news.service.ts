@@ -10,8 +10,6 @@ export class NewsService {
   url: string = `${environment.HOST}news`;
   constructor(private http: HttpClient) { }
 
-
-  
   listar(){
     return this.http.get<News[]>(`${this.url}`);
   }
