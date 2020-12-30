@@ -19,6 +19,11 @@
     </ion-item>
 
     <ion-item lines="full">
+      <ion-label position="floating">Direccion</ion-label>
+      <ion-input type="text" required></ion-input>
+    </ion-item>
+
+    <ion-item lines="full">
       <ion-label position="floating">Correo electrónico</ion-label>
       <ion-input type="text" required></ion-input>
     </ion-item>
@@ -46,7 +51,7 @@
 
     <ion-row>
       <ion-col>
-        <ion-button type="submit" expand="block">REGISTRAR</ion-button>
+        <ion-button [routerLink]="['/login']" type="submit" expand="block">REGISTRAR</ion-button>
       </ion-col>
     </ion-row>
   </form>
