@@ -7,47 +7,86 @@
     <h1><strong>Registro</strong></h1>
   </ion-toolbar>
 
-  <form class="form-css">
+
+<div class="form-css">
+  <form [formGroup]="registrationForm" (ngSubmit)="submit()">
     <ion-item lines="full">
       <ion-label position="floating">Nombre</ion-label>
-      <ion-input type="text" required></ion-input>
+      <ion-input formControlName="nombre" type="text" required></ion-input>
     </ion-item>
+    <div *ngFor="let error of errorMessages.nombre">
+      <ng-container *ngIf ="nombre.hasError(error.type) && (nombre.dirty || nombre.touched)">
+        <small class="error-message">{{error.message}}</small>
+      </ng-container>
+    </div>
 
     <ion-item lines="full">
       <ion-label position="floating">Apellido</ion-label>
-      <ion-input type="text" required></ion-input>
+      <ion-input formControlName="apellido" type="text" required></ion-input>
     </ion-item>
+    <div *ngFor ="let error of errorMessages.apellido">
+      <ng-container *ngIf ="apellido.hasError(error.type) && (apellido.dirty || apellido.touched)">
+        <small class="error-message">{{error.message}}</small>
+      </ng-container>
+    </div>
 
     <ion-item lines="full">
       <ion-label position="floating">Direccion</ion-label>
-      <ion-input type="text" required></ion-input>
+      <ion-input formControlName="direccion" type="text" required></ion-input>
     </ion-item>
+    <div *ngFor ="let error of errorMessages.direccion">
+      <ng-container *ngIf ="direccion.hasError(error.type) && (direccion.dirty || direccion.touched)">
+        <small class="error-message">{{error.message}}</small>
+      </ng-container>
+    </div>
 
     <ion-item lines="full">
       <ion-label position="floating">Correo electrónico</ion-label>
-      <ion-input type="text" required></ion-input>
+      <ion-input formControlName="email" type="text" required></ion-input>
     </ion-item>
+    <div *ngFor ="let error of errorMessages.email">
+      <ng-container *ngIf ="email.hasError(error.type) && (email.dirty || email.touched)">
+        <small class="error-message">{{error.message}}</small>
+      </ng-container>
+    </div>
 
     <ion-item lines="full">
       <ion-label position="floating">Contraseña</ion-label>
-      <ion-input type="password" required></ion-input>
+      <ion-input formControlName="contrasena" type="password" required></ion-input>
     </ion-item>
+    <div *ngFor ="let error of errorMessages.contrasena">
+      <ng-container *ngIf ="contrasena.hasError(error.type) && (contrasena.dirty || contrasena.touched)">
+        <small class="error-message">{{error.message}}</small>
+      </ng-container>
+    </div>
+    <ion-label class="label-pass"> La contraseña debe tener entre 8 y 12 caracteres</ion-label><br>
+    <ion-label class="label-pass"> * Debe tener al menos 1 mayúscula</ion-label><br>
+    <ion-label class="label-pass"> * Debe tener al menos 1 numero</ion-label><br>
 
     <ion-item lines="full">
       <ion-label position="floating">Repetir contraseña</ion-label>
-      <ion-input type="password" required></ion-input>
+      <ion-input formControlName="confirmacion_contrasena" type="password" required></ion-input>
     </ion-item>
+    <div *ngFor ="let error of errorMessages.confirmacion_contrasena">
+      <ng-container *ngIf ="confirmacion_contrasena.hasError(error.type) && (confirmacion_contrasena.dirty || confirmacion_contrasena.touched)">
+        <small class="error-message">{{error.message}}</small>
+      </ng-container>
+    </div>
 
     <ion-item lines="full">
       <ion-label position="floating">Teléfono</ion-label>
-      <ion-input type="number" required></ion-input>
+      <ion-input formControlName="telefono" type="number" required></ion-input>
     </ion-item>
+    <div *ngFor ="let error of errorMessages.telefono">
+      <ng-container *ngIf ="telefono.hasError(error.type) && (telefono.dirty || telefono.touched)">
+        <small class="error-message">{{error.message}}</small>
+      </ng-container>
+    </div>
 
     <ion-item lines="full">
       <ion-label position="floating">Fecha de Nacimiento</ion-label>
-      <ion-datetime displayFormat="YYYY/MM/DD" min="1980" max="2005" required></ion-datetime>
+      <ion-datetime formControlName="fechaNac" displayFormat="YYYY/MM/DD" min="1980" max="2005" required></ion-datetime>
     </ion-item>
-
 
     <ion-row>
       <ion-col>
@@ -55,4 +94,5 @@
       </ion-col>
     </ion-row>
   </form>
+</div>
 </ion-content>
