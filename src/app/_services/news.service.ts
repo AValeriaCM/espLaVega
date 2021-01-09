@@ -11,7 +11,7 @@ export class NewsService {
   constructor(private http: HttpClient) { }
 
   listar(){
-    return this.http.get<News[]>(`${this.url}`);
+    return this.http.get<any>(`${this.url}`);
   }
 
 }

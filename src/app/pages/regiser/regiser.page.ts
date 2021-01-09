@@ -1,5 +1,8 @@
+import { UserService } from './../../_services/user.service';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators, FormBuilder } from '@angular/forms';
+import { User } from 'src/app/Models/User';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-regiser',
@@ -36,11 +39,25 @@ export class RegiserPage implements OnInit {
     { validators: this.matchingPasswords('contrasena', 'confirmacion_contrasena') });
 
   constructor(
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    private usuarioService: UserService,
+    private router: Router
   ) { }
 
   public submit(){
-    console.log(this.registrationForm.value)
+    let user = new User();
+    user.name = this.registrationForm.value['nombre'];
+    user.lastname = this.registrationForm.value['apellido'];
+    user.email = this.registrationForm.value['email'];
+    user.password = this.registrationForm.value['contrasena'];
+    user.password_confirmation = this.registrationForm.value['confirmacion_contrasena'];
+    user.phone = this.registrationForm.value['telefono'];
+
+    this.usuarioService.register(user).subscribe(() =>{
+      this.registrationForm.reset();
+      this.router.navigate(['/home']);
+    });
+    console.log('Ingresa registrar');
   }
   ngOnInit() {
   }

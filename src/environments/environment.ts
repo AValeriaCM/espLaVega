@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  HOST : "http://176.9.51.48/api/",
+  HOST : "http://espvega.ddns.net/api/",
 };
 
 /*
