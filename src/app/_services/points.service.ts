@@ -10,6 +10,8 @@ export class PointService {
   url: string = `${environment.HOST}points`;
   constructor(private http: HttpClient) { }
 
+  listar(){
+    return this.http.get<any>(`${this.url}`);
+  }
 
- 
 }

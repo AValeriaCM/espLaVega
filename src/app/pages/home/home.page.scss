@@ -43,24 +43,33 @@ ion-slides {
       box-shadow: none;
   }
 
-  .card h2{
+  .card img{
+    width: 85%;
+    height: 45%;
+    margin: 3%;
+  }
+
+  .card h1{
       font-weight: bold;
       text-align: center;
       color: white;
+      margin: 5%;
+  }
+
+  .card h2{
+      font-weight: bold;
+      color: white;
+      margin: 3%;
+      text-transform: uppercase;
   }
 
   .card p{
-      text-align: justify;
-      color: white;
-      margin: 25px;
+    text-align: justify;
+    color: white;
+    margin: 5%;
+    font-size: medium;
   }
 
-  .card h3{
-    color: white;
-    margin: 20px;
-    margin-top: 25px;
-    text-transform: uppercase;
-  }
 *{
   font-family: 'Caviar Dreams' !important;
 }

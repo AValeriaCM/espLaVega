@@ -1,3 +1,4 @@
+import { MaterialModule } from './_material/material.module';
 import { HttpClientModule } from '@angular/common/http'
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -28,8 +29,7 @@ import { MatButtonModule } from '@angular/material/button';
     MatTableModule,
     MatInputModule,
     MatButtonModule,
-    FormsModule  
-  ],
+    FormsModule],
   providers: [
     StatusBar,
     SplashScreen,

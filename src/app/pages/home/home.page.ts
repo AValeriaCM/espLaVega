@@ -1,6 +1,8 @@
+import { MatSort } from '@angular/material/sort';
 import { News } from './../../Models/News';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { NewsService } from 'src/app/_services/news.service';
+import { MatPaginator } from '@angular/material/paginator';
 
 @Component({
   selector: 'app-home',
@@ -11,12 +13,7 @@ export class HomePage implements OnInit {
 
   noticia: News;
   dataSource : any[];
-  titulo: string;
-  imagen: string;
-  contenido: string;
-  autor: string;
 
-  //displayedColumns: any[] = ['titulo', 'imagen', 'contenido', 'autor'];
 
   constructor(private newService: NewsService) { }
 
@@ -28,4 +25,16 @@ export class HomePage implements OnInit {
     
   }
 
+  loadData(event) {
+    setTimeout(() => {
+      console.log('Done');
+      event.target.complete();
+
+      // App logic to determine if all data is loaded
+      // and disable the infinite scroll
+      if (this.dataSource.length == 1000) {
+        event.target.disabled = true;
+      }
+    }, 500);
+  }
 }

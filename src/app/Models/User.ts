@@ -1,9 +1,9 @@
 export class User{
-    name:string;
-    lastname:string;
-    password_confirmation:string;
-    password:string;
-    email:string;
-    phone:string;
-    code:string
+    name: string;
+    lastname: string;
+    email: string;
+    address: string;
+    password: string;
+    password_confirmation: string;
+    phone: string;
 }

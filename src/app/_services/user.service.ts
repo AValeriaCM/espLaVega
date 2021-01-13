@@ -8,11 +8,11 @@ import { User } from '../Models/User';
   providedIn: 'root'
 })
 export class UserService {
-  url: string = `${environment.HOST}users`;
+  url: string = `${environment.HOST}`;
   constructor(private http: HttpClient) { }
 
   register(user : User){
-    return this.http.post(`${this.url}/signup`,user);
+    return this.http.post(`${this.url}auth/signup`,user);
   }
  
 }

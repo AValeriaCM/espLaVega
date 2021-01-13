@@ -33,8 +33,6 @@ export class RegiserPage implements OnInit {
     confirmacion_contrasena: new FormControl('', [Validators.required]),
     telefono: new FormControl('',
       [Validators.required, Validators.pattern(this.telefonoPatten)]),
-    fechaNac: new FormControl('',
-      [Validators.required ]),
   },
     { validators: this.matchingPasswords('contrasena', 'confirmacion_contrasena') });
 
@@ -48,6 +46,7 @@ export class RegiserPage implements OnInit {
     let user = new User();
     user.name = this.registrationForm.value['nombre'];
     user.lastname = this.registrationForm.value['apellido'];
+    user.address = this.registrationForm.value['direccion'];
     user.email = this.registrationForm.value['email'];
     user.password = this.registrationForm.value['contrasena'];
     user.password_confirmation = this.registrationForm.value['confirmacion_contrasena'];
@@ -57,7 +56,7 @@ export class RegiserPage implements OnInit {
       this.registrationForm.reset();
       this.router.navigate(['/home']);
     });
-    console.log('Ingresa registrar');
+    console.log(user);
   }
   ngOnInit() {
   }
@@ -108,9 +107,6 @@ export class RegiserPage implements OnInit {
       { type: 'required', message: 'Telefono es requerido' },
       { type: 'maxlength', message: 'El telefono no es valido' },
       { type: 'minlength', message: 'El telefono no es valido' }
-    ],
-    fechaNac:[
-      { type: 'required', message: 'Fecha de Nacimiento es requerido' }
     ]
   };
 
@@ -134,8 +130,5 @@ export class RegiserPage implements OnInit {
   }
   get telefono(){
     return this.registrationForm.get('telefono');
-  }
-  get fechaNac(){
-    return this.registrationForm.get('fechaNac');
   }
 }
