@@ -6,4 +6,5 @@ export class User{
     password: string;
     password_confirmation: string;
     phone: string;
+    code: string;
 }

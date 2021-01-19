@@ -1,35 +1,34 @@
 <ion-header id="">
   <ion-toolbar id="ion-toolbar-css">
     <ion-buttons slot="start">
-      <ion-back-button style="color: white !important;" defaultHref="/"></ion-back-button>
+      <ion-back-button style="color: white !important;" defaultHref="/home"></ion-back-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true" id="ion-content-principal">
-  <h3><strong>Aquí puedes pagar tu factura</strong></h3>
-  <p>1. Ingresa el código de tu factura:</p> 
-  <br>
-  <input type="text" class="input" >    <ion-icon name="checkmark-circle" ></ion-icon>
-  <br>
-  <p>2. Elige tu medio de pago</p>
+  <h3><strong>Aquí puedes pagar tu factura</strong></h3>  
+  <p>Paga por PSE:</p>
   <ion-grid>
     <ion-row>
-      <ion-col>
-        <img style="margin-left: 35px; margin-top: 15px; width: 100px; height: auto;" src="../../../assets/PSE.png" >
-      </ion-col>
-      <ion-col>
-        <img style="margin-left: 35px; margin-top: 15px; width: 100px; height: auto;" src="../../../assets/Bancolombia-.png" >
-      </ion-col>
+      <div align="center">
+        <ion-col>
+          <a href="https://www.psepagos.co/PSEHostingUI/ShowTicketOffice.aspx?ID=9437"> 
+              <img style="width: 35%; height: auto;" src="../../../assets/PSE.png" >
+          </a>
+        </ion-col>
+      </div>
     </ion-row>
   </ion-grid>
   <br>
   <p>O encuentra el punto de pago más cercano a tu dirección</p>
   <br>
-  <!--<ion-list *ngFor="let direccion of dataSource">
-
-  </ion-list>-->
-  <iframe style="margin-left: 35px;" src="https://embed.waze.com/iframe?zoom=12&lat=5.00716&lon=-74.34084"
+  
+  <iframe style="margin-left: 10%; margin-top: 5%;" src="https://embed.waze.com/iframe?zoom=12&lat=5.00716&lon=-74.34084"
   width="300" height="400">
 </iframe>
+
+<ion-list *ngFor="let direccion of dataSource">
+  <li>* {{direccion.address}} - {{direccion.city}}</li>
+</ion-list>
 </ion-content>

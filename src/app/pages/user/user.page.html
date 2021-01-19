@@ -1,11 +1,52 @@
 <ion-header>
   <ion-toolbar id="ion-toolbar-css">
     <ion-buttons slot="start">
-      <ion-back-button style="color: white !important;" defaultHref="/"></ion-back-button>
+      <ion-back-button style="color: white !important;" defaultHref="/home"></ion-back-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content id="ion-content-principal">
-
+  <!--<div align="center" *ngFor="let user of dataSource">
+    <h2>Bienvenido {{user.name}}</h2>
+  </div>
+  <ion-grid>
+    <ion-row *ngFor="let user of dataSource">
+      <ion-col>
+        <h3>Mi información</h3>
+        <h3><strong>Correo electrónico:</strong> {{user.email}}</h3>
+        <h3><strong>Dirección:</strong> {{user.address}}</h3>
+      </ion-col>
+      <br><br>
+      
+    </ion-row>
+  </ion-grid>-->
+  <br><br>
+  <h1><strong>¡BIENVENIDO!</strong></h1>
+  <br>
+  <img src="../../../assets/personaje mujer blanca-03.jpg">
+  <h3>Para consultar el valor de tu factura, diligencia los siguientes campos.</h3>
+  <form [formGroup]="formPay" (ngSubmit)="pay()">
+    <ion-item lines="full">
+      <ion-input placeholder="Codigo de factura" formControlName="code" type="text" required></ion-input>
+    </ion-item>
+    <ion-item lines="full">
+      <ion-input placeholder="Periodo (dd/mm/aaaa)" formControlName="date" type="text" required></ion-input>
+    </ion-item>
+    <ion-row>
+      <ion-col>
+        <ion-button type="submit" expand="block">Consultar</ion-button>
+      </ion-col>
+    </ion-row>
+  </form>
+  <ion-grid>
+    <ion-row *ngFor="let invoice of dataSource">
+      <ion-col align="center">
+        <h1><strong></strong>TU FACTURA</h1>
+          <h3>Código de factura: {{invoice.code}}</h3>
+          <h3>Periodo: {{invoice.date_issue}}</h3>
+          <h3>Total: ${{invoice.total}}</h3>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>

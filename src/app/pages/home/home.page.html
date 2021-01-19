@@ -18,14 +18,16 @@
       <ion-row *ngFor="let noticia of dataSource">
         <ion-col>
             <h2>{{noticia.title}}</h2>
-            <img src="http://espvega.ddns.net/{{noticia.url_image}}">
+            <div align="center">
+              <img src="http://espvega.ddns.net/{{noticia.url_image}}">
+            </div>
             <p>{{noticia.autor}}</p>
             <p>{{noticia.content}}</p>
         </ion-col>
       </ion-row>
     </ion-grid>
-    <ion-infinite-scroll threshold="100px" (ionInfinite)="loadData($event)">
-      <ion-infinite-scroll-content
+    <ion-infinite-scroll (ionInfinite)="loadData($event)">
+      <ion-infinite-scroll-content style="color: white;"
         loadingSpinner="bubbles"
         loadingText="Loading more data...">
       </ion-infinite-scroll-content>

@@ -16,6 +16,8 @@
     color: white;
     margin-top: 5%;
     margin-left: 7%;
+    text-transform: uppercase;
+    text-align: center;
   }
 
 
@@ -29,4 +31,10 @@
     margin-right: 10px;
     width: 250px;
     color: black;
+  }
+
+  ion-list{
+    background-color: transparent !important;
+    margin-left: 15%;
+    padding: 2%;
   }

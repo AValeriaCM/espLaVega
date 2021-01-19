@@ -16,15 +16,38 @@
     margin: 8%;
 }
 
-.card h3{
+h3{
   color: white;
   margin: 4%;
   margin-top: 8%;
 }
 
-video{
-    
+p{
+    text-align: justify;
+    color: white;
+    margin: 8%;
 }
+.error-message{
+    color: var(--ion-color-danger);
+    margin-left: 35px;
+    font-weight: bold;
+  }
+
+  ion-item{
+    border-radius: 8px;
+    padding: 0%;
+    margin: 4%;
+    font-size: medium;
+    height: 5%;
+  }
+
+  ion-input{
+      padding: 0%;
+      font-size: small;
+      height: 5%;
+
+  }
 *{
     font-family: 'Caviar Dreams' !important;
+    color: white;
   }

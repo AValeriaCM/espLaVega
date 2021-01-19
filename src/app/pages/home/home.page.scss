@@ -46,28 +46,27 @@ ion-slides {
   .card img{
     width: 85%;
     height: 45%;
-    margin: 3%;
+    margin: 2%;
   }
 
   .card h1{
       font-weight: bold;
       text-align: center;
       color: white;
-      margin: 5%;
   }
 
   .card h2{
       font-weight: bold;
       color: white;
-      margin: 3%;
       text-transform: uppercase;
+      padding: 3%;
   }
 
   .card p{
     text-align: justify;
     color: white;
-    margin: 5%;
     font-size: medium;
+    margin: 3%;
   }
 
 *{

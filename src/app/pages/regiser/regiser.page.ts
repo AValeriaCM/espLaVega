@@ -20,21 +20,22 @@ export class RegiserPage implements OnInit {
   telefonoPatten: any = /^[ +0-9 +]+$/;
 
   registrationForm = this.formBuilder.group({
-    nombre: new FormControl('',
+    name: new FormControl('',
       [Validators.required, Validators.minLength(3), Validators.maxLength(35), Validators.pattern(this.nombrePattern)]),
-    apellido: new FormControl('',
+    lastname: new FormControl('',
       [Validators.required, Validators.minLength(3), Validators.maxLength(35), Validators.pattern(this.nombrePattern)]),
-    direccion: new FormControl('',
+    address: new FormControl('',
       [Validators.required, Validators.minLength(3), Validators.maxLength(80), Validators.pattern(this.direccionPattern)]),
     email: new FormControl('',
       [Validators.required, Validators.minLength(7), Validators.maxLength(70), Validators.pattern(this.emailPattern)]),
-    contrasena: new FormControl('',
+    password: new FormControl('',
       [Validators.required, Validators.minLength(8), Validators.maxLength(12), Validators.pattern(this.contrasenaPattern)]),
-    confirmacion_contrasena: new FormControl('', [Validators.required]),
-    telefono: new FormControl('',
+    password_confirmation: new FormControl('', [Validators.required]),
+    phone: new FormControl('',
       [Validators.required, Validators.pattern(this.telefonoPatten)]),
+    code: new FormControl('', [Validators.required, Validators.minLength(7)])
   },
-    { validators: this.matchingPasswords('contrasena', 'confirmacion_contrasena') });
+    { validators: this.matchingPasswords('password', 'password_confirmation') });
 
   constructor(
     private formBuilder: FormBuilder,
@@ -44,19 +45,21 @@ export class RegiserPage implements OnInit {
 
   public submit(){
     let user = new User();
-    user.name = this.registrationForm.value['nombre'];
-    user.lastname = this.registrationForm.value['apellido'];
-    user.address = this.registrationForm.value['direccion'];
+    user.name = this.registrationForm.value['name'];
+    user.lastname = this.registrationForm.value['lastname'];
+    user.address = this.registrationForm.value['address'];
+    user.password = this.registrationForm.value['password'];
+    user.password_confirmation = this.registrationForm.value['password_confirmation'];
     user.email = this.registrationForm.value['email'];
-    user.password = this.registrationForm.value['contrasena'];
-    user.password_confirmation = this.registrationForm.value['confirmacion_contrasena'];
-    user.phone = this.registrationForm.value['telefono'];
-
-    this.usuarioService.register(user).subscribe(() =>{
+    user.phone = this.registrationForm.value['phone'];
+    user.code = this.registrationForm.value['code'];
+    
+    this.usuarioService.register(user).subscribe(() => {
+      console.log(user);
       this.registrationForm.reset();
       this.router.navigate(['/home']);
     });
-    console.log(user);
+    
   }
   ngOnInit() {
   }
@@ -75,17 +78,17 @@ export class RegiserPage implements OnInit {
   }
 
   public errorMessages = {
-    nombre:[
+    name:[
       { type: 'required', message: 'Nombre es requerido' },
       { type: 'maxlength', message: 'El nombre no es valido' },
       { type: 'minlength', message: 'El nombre no es valido' }
     ],
-    apellido:[
+    lastname:[
       { type: 'required', message: 'Apellido es requerido' },
       { type: 'maxlength', message: 'El apellido no es valido' },
       { type: 'minlength', message: 'El apellido no es valido' }
     ],
-    direccion:[
+    address:[
       { type: 'required', message: 'Direccion es requerido' },
       { type: 'maxlength', message: 'La direccion no es valida' },
       { type: 'minlength', message: 'La direccion no es valida' }
@@ -95,40 +98,47 @@ export class RegiserPage implements OnInit {
       { type: 'maxlength', message: 'El email no es valido' },
       { type: 'minlength', message: 'El email no es valido' }
     ],
-    contrasena:[
+    password:[
       { type: 'required', message: 'Contrasena es requerido' },
       { type: 'maxlength', message: 'La contrasena no es valida' },
       { type: 'minlength', message: 'La contrasena no es valida' }
     ],
-    confirmacion_contrasena:[
+    password_confirmation:[
       { type: 'required', message: 'Confirmacion es requerido' }
     ],
-    telefono:[
+    phone:[
       { type: 'required', message: 'Telefono es requerido' },
       { type: 'maxlength', message: 'El telefono no es valido' },
       { type: 'minlength', message: 'El telefono no es valido' }
+    ],
+    code:[
+      { type: 'required', message: 'Codigo es requerido' },
+      { type: 'minlength', message: 'El codigo no es valido' }
     ]
   };
 
-  get nombre(){
-    return this.registrationForm.get('nombre');
+  get name(){
+    return this.registrationForm.get('name');
   }
-  get apellido(){
-    return this.registrationForm.get('apellido');
+  get lastname(){
+    return this.registrationForm.get('lastname');
   }
-  get direccion(){
-    return this.registrationForm.get('direccion');
+  get address(){
+    return this.registrationForm.get('address');
   }
   get email(){
     return this.registrationForm.get('email');
   }
-  get contrasena(){
-    return this.registrationForm.get('contrasena');
+  get password(){
+    return this.registrationForm.get('password');
   }
-  get confirmacion_contrasena(){
-    return this.registrationForm.get('confirmacion_contrasena');
+  get password_confirmation(){
+    return this.registrationForm.get('password_confirmation');
   }
-  get telefono(){
-    return this.registrationForm.get('telefono');
+  get phone(){
+    return this.registrationForm.get('phone');
+  }
+  get code(){
+    return this.registrationForm.get('code');
   }
 }

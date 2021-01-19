@@ -21,11 +21,12 @@
     <h2 align="center"><strong>ENTIDAD</strong></h2>
     <h3><strong>MISION</strong></h3>
     <p>Somos una Empresa Industrial y Comercial del Municipio de La Vega, que promueve el desarrollo
-       sostenible en nuestro territorio, con servicios de agua potable, alcantarillado y aseo, 
-       enmarcados bajo principios de sustentabilidad ambiental.
+      sostenible en nuestro territorio, con servicios de agua potable, alcantarillado y aseo,
+      enmarcados bajo principios de sustentabilidad ambiental.
     </p>
     <div align="center">
-      <video width="300px" height="auto" src="https://esplavega.com.co/wp-content/uploads/2020/11/animacion-ESP-2.mp4" loop="" controls="" playsinline="" controlslist="nodownload">
+      <video width="85%" height="auto" src="https://esplavega.com.co/wp-content/uploads/2020/11/animacion-ESP-2.mp4"
+        loop="" controls="" playsinline="" controlslist="nodownload">
       </video>
     </div>
     <br>
@@ -38,39 +39,73 @@
     <h3 align="center"><strong>ORNGANIGRAMA</strong></h3>
     <img src="./assets/organigrama.jpg">
   </ion-card>
-  <ion-card class="card">
-    <h3><strong>PQR's</strong></h3>
-    
-    <ion-grid>
-      <ion-row>
-        <ion-col size=1>
 
-        </ion-col>
-        <ion-col size=10 >
-            <input type="text" style="width: 100%; height: 80px; color: black;" placeholder="Escribe aquí tu PQR...">
-          <br>
-            <input type="button" value="Enviar" style="background-color:  rgb(0, 0, 131);" >
-        </ion-col>
-        <ion-col size=1>
+    <div class="form-css">
+      <h3><strong>PQR's</strong></h3>
+      <p>Para poner una petición, queja o reclamo, diligencia el siguiente formulario.</p>
+      <form [formGroup]="pqrForm" (ngSubmit)="sendPqr()">
+        <ion-item lines="full">
+          <ion-input placeholder="Nombre" formControlName="name" type="text" required></ion-input>
+        </ion-item>
+        <div *ngFor="let error of errorMessages.name">
+          <ng-container *ngIf = "name.hasError(error.type) && (name.dirty || name.touched)">
+            <small class="error-message">{{error.message}}</small>
+          </ng-container>
+        </div>
 
-        </ion-col>
-      </ion-row>
-    </ion-grid>
+        <ion-item lines="full">
+          <ion-input placeholder="Apellido" formControlName="lastname" type="text" required></ion-input>
+        </ion-item>
+        <div *ngFor="let error of errorMessages.lastname">
+          <ng-container *ngIf = "lastname.hasError(error.type) && (lastname.dirty || lastname.touched)">
+            <small class="error-message">{{error.message}}</small>
+          </ng-container>
+        </div>
 
-    
-  </ion-card>
+        <ion-item lines="full">
+          <ion-input placeholder="Correo electrónico" formControlName="email" type="text" required></ion-input>
+        </ion-item>
+        <div *ngFor="let error of errorMessages.email">
+          <ng-container *ngIf = "email.hasError(error.type) && (email.dirty || email.touched)">
+            <small class="error-message">{{error.message}}</small>
+          </ng-container>
+        </div>
+
+        <ion-item lines="full">
+          <ion-input placeholder="Mensaje" formControlName="message" type="text" required></ion-input>
+        </ion-item>
+        <div *ngFor="let error of errorMessages.message">
+          <ng-container *ngIf = "message.hasError(error.type) && (message.dirty || message.touched)">
+            <small class="error-message">{{error.message}}</small>
+          </ng-container>
+        </div>
+
+        <ion-row>
+          <ion-col>
+            <ion-button [routerLink]="['/info']" type="submit" expand="block">Enviar</ion-button>
+          </ion-col>
+        </ion-row>
+      </form>
+</div>
+
   <ion-card class="card">
     <h3>Contáctenos</h3>
     <ion-grid align="center">
       <ion-row>
         <ion-col>
-          <ion-icon name="logo-facebook" size="large" href="https://www.facebook.com/ESPLAVEGA/"></ion-icon>
+          <a href="https://www.facebook.com/ESPLAVEGA/">
+            <ion-icon name="logo-facebook" size="large" style="color: white;"></ion-icon>
+          </a>
         </ion-col>
         <ion-col>
-          <ion-icon name="logo-youtube" size="large" href="https://www.youtube.com/channel/UCAwX73KWI0J4qFivmpBkaGg"></ion-icon>
+          <a href="https://www.youtube.com/channel/UCAwX73KWI0J4qFivmpBkaGg">
+            <ion-icon name="logo-youtube" size="large" style="color: white;"></ion-icon>
+          </a>
         </ion-col>
         <ion-col>
-          <ion-icon name="logo-instagram" size="large" href="https://instagram.com/esp_la_vega?igshid=13avyhpz321j2"></ion-icon>
+          <a href="https://instagram.com/esp_la_vega?igshid=13avyhpz321j2">
+            <ion-icon name="logo-instagram" size="large" style="color: white;"></ion-icon>
+          </a>
         </ion-col>
       </ion-row>
     </ion-grid>
