@@ -39,34 +39,21 @@ ion-slides {
   }
 
   .card{
-      background-color: transparent;
-      box-shadow: none;
+      background-color: rgb(255, 255, 255);
   }
 
-  .card img{
-    width: 85%;
-    height: 45%;
-    margin: 2%;
-  }
 
-  .card h1{
-      font-weight: bold;
-      text-align: center;
-      color: white;
-  }
-
-  .card h2{
-      font-weight: bold;
-      color: white;
-      text-transform: uppercase;
-      padding: 3%;
-  }
-
-  .card p{
+  ion-card-content{
     text-align: justify;
-    color: white;
-    font-size: medium;
     margin: 3%;
+    letter-spacing: 0.5px;
+    color: black;
+  }
+
+  ion-card-title{
+    color: black;
+    margin: 2%;
+    font-weight: bold;
   }
 
 *{

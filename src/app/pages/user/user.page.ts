@@ -25,10 +25,13 @@ export class UserPage implements OnInit {
     private formBuilder: FormBuilder) { }
 
   ngOnInit() {
-    /*this.authService.login(this.user).subscribe(res =>{
-      console.log(res.data);
-      this.dataSource = res.data;
-    });*/
+    this.getUserLogged();
+  }
+
+  getUserLogged() {
+    this.authService.getUser().subscribe(user => {
+      console.log(user);
+    });
   }
 
   public pay(){

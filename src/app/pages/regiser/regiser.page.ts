@@ -1,3 +1,4 @@
+import { AutenticationService } from './../../_services/autentication.service';
 import { UserService } from './../../_services/user.service';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators, FormBuilder } from '@angular/forms';
@@ -40,7 +41,8 @@ export class RegiserPage implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private usuarioService: UserService,
-    private router: Router
+    private router: Router,
+    private loginService: AutenticationService
   ) { }
 
   public submit(){
@@ -54,11 +56,15 @@ export class RegiserPage implements OnInit {
     user.phone = this.registrationForm.value['phone'];
     user.code = this.registrationForm.value['code'];
     
-    this.usuarioService.register(user).subscribe(() => {
-      console.log(user);
+    this.usuarioService.register(user).subscribe(data => {
+      //this.loginService.setToken(data.token);
       this.registrationForm.reset();
-      this.router.navigate(['/home']);
-    });
+      this.router.navigateByUrl('/login');
+    },
+      error => {
+        console.log(error);
+      }
+    );
     
   }
   ngOnInit() {
